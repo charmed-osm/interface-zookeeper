@@ -70,7 +70,7 @@ class ZookeeperClient(Object):
 
     def __init__(self, charm, relation_name):
         super().__init__(charm, relation_name)
-        self.state.set_default(db_hash=None)
+        self.state.set_default(zookeeper_hash=None)
         self.relation_name = relation_name
 
         self.framework.observe(charm.on[relation_name].relation_changed, self.on_changed)
